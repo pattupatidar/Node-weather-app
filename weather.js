@@ -12,7 +12,13 @@ var getWeather = (Latitude,Longitude,callback) => {
     } else if (response.statusCode == 200){
       callback(undefined,{
         temperature: body.currently.temperature,
-        apparentTemperature: body.currently.apparentTemperature
+        apparentTemperature: body.currently.apparentTemperature,
+        humidity: body.currently.humidity,
+        pressure: body.currently.pressure,
+        windSpeed: body.currently.windSpeed,
+        visibility: body.currently.visibility,
+        summary: body.hourly.summary,
+        icon: body.currently.icon
       });
     }
   });
